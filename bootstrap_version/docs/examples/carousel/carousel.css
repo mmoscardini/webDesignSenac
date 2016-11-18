@@ -179,6 +179,10 @@ header.major .byline {
 	top: -1em;
 }
 
+.form_comp{
+	padding-top:7%;
+}
+
 .byline {
 	display: inline-block;
 	text-transform: uppercase;

@@ -8,7 +8,7 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <link rel="icon" href="../../favicon.ico">
-      <title>Elder  Peer - Busca por <?php echo htmlspecialchars($_POST['profissoes']); ?></title>
+      <title>Elder Peer - Busca por <?php echo htmlspecialchars($_POST['profissoes']); ?></title>
       <!-- Bootstrap core CSS -->
       <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -28,33 +28,7 @@
       <![endif]-->
       <!-- Custom styles for this template -->
       <link href="carousel.css" rel="stylesheet">
-      <script type="text/javascript">	
-         $(document).ready(function () {         
-         	$.getJSON('https://gist.githubusercontent.com/ografael/2037135/raw/5d31e7baaddd0d599b64c3ec04827fc244333447/estados_cidades.json', function (data) {
-         		var items = [];
-         		var options = '<option value="">Estado</option>';	
-         		$.each(data, function (key, val) {
-         			options += '<option value="' + val.nome + '">' + val.nome + '</option>';
-         		});					
-         		$("#estado").html(options);         		
-         		$("#estado").change(function () {
-         			var options_cidades = 'Cidade';
-         			var str = "";
-         			$("#estado option:selected").each(function () {
-         				str += $(this).text();
-         			});
-         			$.each(data, function (key, val) {
-         				if(val.nome == str) {							
-         					$.each(val.cidades, function (key_city, val_city) {
-         						options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
-         					});							
-         				}
-         			});
-         			$("#cidade").html(options_cidades);
-         		}).change();
-         	});
-         });
-      </script>	
+       <script type="text/javascript" src="JavaScript.js"></script>	
    </head>
    <!-- NAVBAR
       ================================================== -->
@@ -70,12 +44,13 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                      </button>
-                     <a class="navbar-brand" href="#">SERVIÇOS TERCEIRA IDADE</a>
+                     <a class="" href="index.html"><img class="logoStyle" src="../../assets/img/logo.jpg" alt="" ></a>
                   </div>
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a href="#about"><strong>LOGIN</strong></a></li>
-                        <li><a href="#contact"><strong>DIVULGUE SEUS SERVIÇOS</strong></a></li>
+                        <li><a href="#" class="box-feature2" ><strong>LOGIN</strong></a></li>
+                        <li><a href="#" class="box-feature2" ><strong>DIVULGUE SEUS SERVIÇOS</strong></a></li>
+                        <li><a href="#" class="box-feature2" id="fontResizer" >Aa+</a></li>
                      </ul>
                   </div>
                </div>
@@ -83,8 +58,8 @@
          </div>
       </div>
       <!--Formulário-->
-      <div class="container marketing">
-         <section class="form_comp">
+      <div class="formContainer">
+         <section class="">
             <h1><center><strong>Encontre os melhores <br /> <?php echo htmlspecialchars($_POST['profissoes']); ?> em sua região!</strong></center>
             </h1><br />
             <form class="form-horizontal" method="post">
@@ -129,12 +104,32 @@
                </div>
                <div class="form-group">
                   <div class="col-sm-10 col-sm-offset-2">
-                     <input type="submit" name="submit" value="Buscar" class="btn btn-lg btn-primary">
+                     <input type="submit" name="submit" value="Buscar" class="btn btn-lg btn-primary buttonMinWidth">
                   </div>
                </div>
             </form>
          </section>
       </div>
+
+      <footer>
+         <div class="container">
+            <div class="col-lg-4 ">
+               <a href="#" class="byline">Quem Somos</a>
+            </div>
+           <div class="col-lg-4 ">
+               <a href="#" class="byline">Contato</a>
+           </div>
+           <div class="col-lg-4 ">
+              <a href="#" class="byline">Nossos Serviços</a>
+            </div>
+         </div>
+         <br> <br>
+         <div class="container">
+               <p class="pull-right"><a href="#">Back to top</a></p>
+               <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+           </div>
+         </footer>
+
       <script>
          $('#sandbox-container input').datepicker({
          });

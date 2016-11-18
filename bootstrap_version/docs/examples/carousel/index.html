@@ -13,6 +13,11 @@
       <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
       <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+      <!-- Include Date Range Picker -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
       <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
       <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
       <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
@@ -23,11 +28,14 @@
       <![endif]-->
       <!-- Custom styles for this template -->
       <link href="carousel.css" rel="stylesheet">
-      <style type="text/css">.\31 2u{width:100%}.\31 1u{width:91.6666666667%}.\31 0u{width:83.3333333333%}.\39 u{width:75%}.\38 u{width:66.6666666667%}.\37 u{width:58.3333333333%}.\36 u{width:50%}.\35 u{width:41.6666666667%}.\34 u{width:33.3333333333%}.\33 u{width:25%}.\32 u{width:16.6666666667%}.\31 u{width:8.3333333333%}.\31 u,.\32 u,.\33 u,.\34 u,.\35 u,.\36 u,.\37 u,.\38 u,.\39 u,.\31 0u,.\31 1u,.\31 2u{float:left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.\-11u{margin-left:91.6666666667%}.\-10u{margin-left:83.3333333333%}.\-9u{margin-left:75%}.\-8u{margin-left:66.6666666667%}.\-7u{margin-left:58.3333333333%}.\-6u{margin-left:50%}.\-5u{margin-left:41.6666666667%}.\-4u{margin-left:33.3333333333%}.\-3u{margin-left:25%}.\-2u{margin-left:16.6666666667%}.\-1u{margin-left:8.3333333333%}.row.flush{margin-left:0}.row.flush>*{padding:0!important}</style>
+      <style type="text/css">.\31 2u{width:100%}.\31 1u{width:91.6666666667%}.\31 0u{width:83.3333333333%}.\39 u{width:75%}.\38 u{width:66.6666666667%}.\37 u{width:58.3333333333%}.\36 u{width:50%}.\35 u{width:41.6666666667%}.\34 u{width:33.3333333333%}.\33 u{width:25%}.\32 u{width:16.6666666667%}.\31 u{width:8.3333333333%}.\31 u,.\32 u,.\33 u,.\34 u,.\35 u,.\36 u,.\37 u,.\38 u,.\39 u,.\31 0u,.\31 1u,.\31 2u{float:left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.\-11u{margin-left:91.6666666667%}.\-10u{margin-left:83.3333333333%}.\-9u{margin-left:75%}.\-8u{margin-left:66.6666666667%}.\-7u{margin-left:58.3333333333%}.\-6u{margin-left:50%}.\-5u{margin-left:41.6666666667%}.\-4u{margin-left:33.3333333333%}.\-3u{margin-left:25%}.\-2u{margin-left:16.6666666667%}.\-1u{margin-left:8.3333333333%}.row.flush{margin-left:0}.row.flush>*{padding:0!important}
+      </style>
+
+      <script type="text/javascript" src="JavaScript.js">      </script>
    </head>
    <!-- NAVBAR
       ================================================== -->
-   <body>
+   <body id="body">
       <div class="navbar-wrapper">
          <div class="container">
             <nav class="navbar navbar-inverse navbar-static-top">
@@ -39,12 +47,13 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                      </button>
-                     <a class="" href="#"><img class="img-circle-style2" src="../../assets/img/logo.png" alt=""></a>
+                     <a class="" href="index.html"><img class="logoStyle" src="../../assets/img/logo.jpg" alt="" tabindex="1"></a>
                   </div>
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a href="#about" class="box-feature2"><strong>LOGIN</strong></a></li>
-                        <li><a href="#contact" class="box-feature2	"><strong>DIVULGUE SEUS SERVIÇOS</strong></a></li>
+                        <li><a href="#" class="box-feature2" tabindex="2"><strong>LOGIN</strong></a></li>
+                        <li><a href="#" class="box-feature2" tabindex="3"><strong>DIVULGUE SEUS SERVIÇOS</strong></a></li>
+                        <li><a href="#" class="box-feature2" id="fontResizer" tabindex="4">Aa+</a></li>
                      </ul>
                   </div>
                </div>
@@ -61,7 +70,7 @@
 		 <div class="carousel-caption">
             <h3>Encontre um serviço</h3>
 			<form action="form.php" method="post">
-				<select name="profissoes" id="comboBox" class="selectpicker" style="color: #323233; border-radius: 6px;" required>
+				<select name="profissoes" id="comboBox" class="selectpicker" style="color: #323233; border-radius: 6px;" required tabindex="5">
 				   <option value="">Selecione</option>
 				   <option value="Médicos">Médicos</option>
 				   <option value="Agentes de Turismo">Agentes de Turismo</option>
@@ -69,7 +78,7 @@
 				   <option value="Professores">Professores</option>
 				</select><br>
 				<footer>
-					<input type="submit" name="submit" value="Buscar" class="btn btn-lg btn-primary">
+					<input type="submit" name="submit" value="Buscar" class="btn btn-lg btn-info buttonMinWidth" tabindex="6">
 				</footer>
 			</form>
          </div>
@@ -93,26 +102,26 @@
                   <!--  CLASSE QUE CRIA LINHAS DIVISÓRIAS-->
                   <header class="first major">
                   </header>
-                  <h2 style="color: #090615">COMO FUNCIONA</h2>
-                  <span class="byline" style="color: #0b061c">Encontrar profissionais qualificados e focados na terceira idade agora é fácil</span>
+                  <h2 style="color: #090615" tabindex="7">COMO FUNCIONA</h2>
+                  <h4 class="" style="color: #0b061c">Encontrar profissionais qualificados e focados na terceira idade agora é fácil</h4>
                </div>
          </section>
          <div class="col-lg-4">
          <img  class="img-circle" src="../../assets/img/comofunciona_busque.jpg" alt="busqeu por profissionais ilustração">
-         <h2>Busque por profissionais</h2>
-         <p>Responda algumas perguntas sobre os serviços que você deseja contratar e nós indicamos os profissionais mais adequados para você</p>
+         <h2 tabindex="8">Busque por profissionais</h2>
+         <p tabindex="9">Responda algumas perguntas sobre os serviços que você deseja contratar e nós indicamos os profissionais mais adequados para você</p>
          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
          </div><!-- /.col-lg-4 -->
          <div class="col-lg-4">
-         <img class="img-circle" src="../../assets/img/comofunciona_encontre.jpg" alt="Encontre o profissional ideal ilustração">
-         <h2>Encontre o melhor profissional para você</h2>
-         <p>Analise os profissionais cadastrados em nossa base de dados e solicite orçamentos</p>
+         <img class="img-circle" src="../../assets/img/comofunciona_encontre.jpg" alt="Encontre o profissional ideal ilustração" >
+         <h2 tabindex="10">Encontre o melhor profissional para você</h2>
+         <p tabindex="11">Analise os profissionais cadastrados em nossa base de dados e solicite orçamentos</p>
          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
          </div><!-- /.col-lg-4 -->
          <div class="col-lg-4">
          <img class="img-circle"  src="../../assets/img/comofunciona_contrate.jpg" alt="compare e contrate ilustração">
-         <h2>Compare e contrate</h2>
-         <p>Compare orçamentos e agende uma data e horario que melhor lhe atenda. Feche negócio pela própria plataforma</p>
+         <h2 tabindex="12">Compare e contrate</h2>
+         <p tabindex="13">Compare orçamentos e agende uma data e horario que melhor lhe atenda. Feche negócio pela própria plataforma</p>
          <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
          </div><!-- /.col-lg-4 -->
          </div><!-- /.row -->
@@ -121,8 +130,8 @@
                <div class="12u">
                   <header class="first major">   
                   </header>
-                  <h2 style="color: #090615">COMECE A  USAR</h2>
-                  <span class="byline" style="color: #0b061c">Encontre profissionais qualificados e com foco em atender a terceira idade</span>
+                  <h2 style="color: #090615" tabindex="14">COMECE A  USAR</h2>
+                  <h4 class="" style="color: #0b061c">Encontre profissionais qualificados e com foco em atender a terceira idade</h4>
                </div>
             </div>
          </section>
@@ -134,13 +143,14 @@
                      <div class="col-md-6">
                         <span class=" "><img class="img-circle-style1" src="../../assets/img/ContrateProfissionais.png" alt="busque por profissionais ilustração"></span><br>
                         <footer>
-                           <a href="#" class="btn btn-lg btn-primary">Busque por profissionais</a>
+                           <a href="#" class="btn btn-lg btn-primary buttonMinWidth"  tabindex="15">Busque por profissionais</a>
                         </footer>
                      </div>
                      <div class="col-md-6">
-                        <span class=""><img class="img-circle-style1" src="../../assets/img/AnuncieSeuNegocio.png" alt="anuncie seus serviços ilustração"></span>
+                        <span class=""><img class="img-circle-style1" src="../../assets/img/AnuncieSeuNegocio.png" alt="anuncie seus serviços ilustração">
+                        </span><br>
                         <footer>
-                           <a href="#" class="btn btn-lg btn-primary">Anuncie seus serviços</a>
+                           <a href="#" class="btn btn-lg btn-primary buttonMinWidth"  tabindex="16">Anuncie seus serviços</a>
                         </footer>
                      </div>
                   </div>
@@ -153,19 +163,19 @@
          <footer>
          	<div class="container">
 	         	<div class="col-lg-4 ">
-	         		<a href="#" class="byline">Quem Somos</a>
+	         		<a href="#" class="byline" tabindex="17">Quem Somos</a>
 	 	        </div>
 	 	        <div class="col-lg-4 ">
-	 	       		<a href="#" class="byline">Contato</a>
+	 	       		<a href="#" class="byline" tabindex="18">Contato</a>
 	 	        </div>
 	 	        <div class="col-lg-4 ">
-	 	        	<a href="#" class="byline">Nossos Serviços</a>
+	 	        	<a href="#" class="byline" tabindex="19">Nossos Serviços</a>
 	 	        </div>
  	        </div>
  	        <br> <br>
 			<div class="container">
-	            <p class="pull-right"><a href="#">Back to top</a></p>
-	            <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+	            <p class="pull-right"><a href="#" tabindex="22">Back to top</a></p>
+	            <p>&copy; 2016 Company, Inc. &middot; <a href="#" tabindex="20">Privacy</a> &middot; <a href="#" tabindex="21">Terms</a></p>
 	        </div>
          </footer>
       </div>

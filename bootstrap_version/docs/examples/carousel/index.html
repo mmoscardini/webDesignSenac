@@ -60,16 +60,18 @@
 			  <div class="container">
 		 <div class="carousel-caption">
             <h3>Encontre um serviço</h3>
-            <select name="Profissoes" id="comboBox" class="selectpicker" style="color: #323233; border-radius: 6px;">
-               <option value="">Selecione</option>
-               <option value="Exercício físico">Esportes</option>
-               <option value="Turismo">Turismo</option>
-               <option value="Saúde">Saúde</option>
-               <option value="Educação">Educação</option>
-            </select><br>
-		<footer>
-         	<a href="http://esite.io/store/Df99c2b95e686878ea8f16e465d56047e/site/index.html#" class="btn btn-lg btn-primary">BUSCAR</a>
-        </footer>
+			<form action="form.php" method="post">
+				<select name="profissoes" id="comboBox" class="selectpicker" style="color: #323233; border-radius: 6px;" required>
+				   <option value="">Selecione</option>
+				   <option value="Médicos">Médicos</option>
+				   <option value="Agentes de Turismo">Agentes de Turismo</option>
+				   <option value="Personal Trainers">Personal Trainers</option>
+				   <option value="Professores">Professores</option>
+				</select><br>
+				<footer>
+					<input type="submit" name="submit" value="Buscar" class="btn btn-lg btn-primary">
+				</footer>
+			</form>
          </div>
 		 </div>
             </div>

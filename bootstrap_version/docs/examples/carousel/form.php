@@ -8,11 +8,16 @@
       <meta name="description" content="">
       <meta name="author" content="">
       <link rel="icon" href="../../favicon.ico">
-      <title>BOOTSTRAP - SERVIÇOS TERCEIRA IDADE</title>
+      <title>Elder  Peer - Busca por <?php echo htmlspecialchars($_POST['profissoes']); ?></title>
       <!-- Bootstrap core CSS -->
       <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
       <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
       <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+      <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+      <!-- Include Date Range Picker -->
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
       <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
       <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
       <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
@@ -23,7 +28,33 @@
       <![endif]-->
       <!-- Custom styles for this template -->
       <link href="carousel.css" rel="stylesheet">
-      <style type="text/css">.\31 2u{width:100%}.\31 1u{width:91.6666666667%}.\31 0u{width:83.3333333333%}.\39 u{width:75%}.\38 u{width:66.6666666667%}.\37 u{width:58.3333333333%}.\36 u{width:50%}.\35 u{width:41.6666666667%}.\34 u{width:33.3333333333%}.\33 u{width:25%}.\32 u{width:16.6666666667%}.\31 u{width:8.3333333333%}.\31 u,.\32 u,.\33 u,.\34 u,.\35 u,.\36 u,.\37 u,.\38 u,.\39 u,.\31 0u,.\31 1u,.\31 2u{float:left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.\-11u{margin-left:91.6666666667%}.\-10u{margin-left:83.3333333333%}.\-9u{margin-left:75%}.\-8u{margin-left:66.6666666667%}.\-7u{margin-left:58.3333333333%}.\-6u{margin-left:50%}.\-5u{margin-left:41.6666666667%}.\-4u{margin-left:33.3333333333%}.\-3u{margin-left:25%}.\-2u{margin-left:16.6666666667%}.\-1u{margin-left:8.3333333333%}.row.flush{margin-left:0}.row.flush>*{padding:0!important}</style>
+      <script type="text/javascript">	
+         $(document).ready(function () {         
+         	$.getJSON('https://gist.githubusercontent.com/ografael/2037135/raw/5d31e7baaddd0d599b64c3ec04827fc244333447/estados_cidades.json', function (data) {
+         		var items = [];
+         		var options = '<option value="">Estado</option>';	
+         		$.each(data, function (key, val) {
+         			options += '<option value="' + val.nome + '">' + val.nome + '</option>';
+         		});					
+         		$("#estado").html(options);         		
+         		$("#estado").change(function () {
+         			var options_cidades = 'Cidade';
+         			var str = "";
+         			$("#estado option:selected").each(function () {
+         				str += $(this).text();
+         			});
+         			$.each(data, function (key, val) {
+         				if(val.nome == str) {							
+         					$.each(val.cidades, function (key_city, val_city) {
+         						options_cidades += '<option value="' + val_city + '">' + val_city + '</option>';
+         					});							
+         				}
+         			});
+         			$("#cidade").html(options_cidades);
+         		}).change();
+         	});
+         });
+      </script>	
    </head>
    <!-- NAVBAR
       ================================================== -->
@@ -51,107 +82,63 @@
             </nav>
          </div>
       </div>
-      <!-- Carousel
-         ================================================== -->
-      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-         <div class="carousel-inner" role="listbox">
-            <div class="item active">
-               <img class="first-slide" src="http://placehold.it/1350x500" alt="First slide">
-			   <div class="container">
-		 <div class="carousel-caption">
-            <h3>Encontre um serviço</h3>
-            <select name="Profissoes" id="comboBox" class="selectpicker" style="color: #323233; border-radius: 6px;">
-               <option value="">Selecione</option>
-               <option value="Exercício físico">Exercício físico</option>
-               <option value="Turismo">Turismo</option>
-               <option value="Saúde">Saúde</option>
-               <option value="Educação">Educação</option>
-            </select><br>
-		<footer>
-                           <a href="http://esite.io/store/Df99c2b95e686878ea8f16e465d56047e/site/index.html#" class="btn btn-lg btn-primary">BUSCAR</a>
-                        </footer>
-         </div>
-		 </div>
-            </div>
-         </div>
-         <!-- /input-group -->
-      </div>
-      <!-- /.col-lg-6 -->
-      </div><!-- /.row -->
-      <!-- /.carousel -->
-	  
-      <!-- Marketing messaging and featurettes
-         ================================================== -->
-      <!-- Wrap the rest of the page in another container to center all the content. -->
+      <!--Formulário-->
       <div class="container marketing">
-         <!-- Three columns of text below the carousel -->
-         <section class="container box-feature1">
-            <div class="row">
-               <div class="12u">
-                  <!--  CLASSE QUE CRIA LINHAS DIVISÓRIAS-->
-                  <header class="first major">
-                  </header>
-                  <h2>COMO FUNCIONA</h2>
-                  <span class="byline">Encontrar profissionais qualificados e focados na terceira idade agora é fácil</span>
+         <section class="form_comp">
+            <h1><center><strong>Encontre os melhores <br /> <?php echo htmlspecialchars($_POST['profissoes']); ?> em sua região!</strong></center>
+            </h1><br />
+            <form class="form-horizontal" method="post">
+               <div class="form-group">
+                  <label class="control-label col-sm-2" for="cep">CEP:</label>
+                  <div class="col-sm-10">
+                     <input type="email" class="form-control" id="email" placeholder="Digite seu CEP">
+                  </div>
                </div>
-         </section>
-         <div class="col-lg-4">
-         <img  class="img-circle" src="C:/Users/jean.pereira/Desktop/webDesignSenac-master/webDesignSenac-master/Prot+%C2%A6tipo%20alta%20fidelidade/Web%20Design_files/pic01.jpg" alt="Generic placeholder image" width="140" height="140">
-         <h2>Busque por profissionais</h2>
-         <p>Responda algumas perguntas sobre os serviços que você deseja contratar e nós indicamos os profissionais mais adequados para você</p>
-         <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-         </div><!-- /.col-lg-4 -->
-         <div class="col-lg-4">
-         <img class="img-circle" src="C:/Users/jean.pereira/Desktop/webDesignSenac-master/webDesignSenac-master/Prot+%C2%A6tipo%20alta%20fidelidade/Web%20Design_files/pic02.jpg" alt="Generic placeholder image" width="140" height="140">
-         <h2>Encontre e compare</h2>
-         <p>Analise os profissionais cadastrados em nossa base de dados e solicite orçamentos</p>
-         <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-         </div><!-- /.col-lg-4 -->
-         <div class="col-lg-4">
-         <img class="img-circle" src="C:/Users/jean.pereira/Desktop/webDesignSenac-master/webDesignSenac-master/Prot+%C2%A6tipo%20alta%20fidelidade/Web%20Design_files/pic03.jpg" alt="Generic placeholder image" width="140" height="140">
-         <h2>Contrate</h2>
-         <p>Compare orçamentos e agende uma data e horario que melhor lhe atenda. Feche negócio pela própria plataforma</p>
-         <!--<p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>-->
-         </div><!-- /.col-lg-4 -->
-         </div><!-- /.row -->
-         <section class="container box-feature1">
-            <div class="row">
-               <div class="12u">
-                  <header class="first major">   
-                  </header>
-                  <h2>COMECE A  USAR</h2>
-                  <span class="byline">Encontre profissionais qualificados e com foco em atender a terceira idade</span>
+               <div class="form-group">
+                  <label class="control-label col-sm-2" for="estado">Estado:</label>
+                  <div class="col-sm-10">
+                     <select name="estado" id="estado" class="form-control">
+                        <option value=""></option>
+                     </select>
+                  </div>
                </div>
-            </div>
-         </section>
-         <div class="main-wrapper-style1">
-            <div class="inner">
-               <!-- Feature 2 -->
-               <center>
-                  <div class="row">
-                     <div class="col-md-6">
-                        <span class=""><img class="img-circle-style1" src="C:/Users/jean.pereira/Desktop/webDesignSenac-master/webDesignSenac-master/Prot+¦tipo%20alta%20fidelidade/img/ilust_alongamento.jpg" alt=""></span><br>
-                        <footer>
-                           <a href="http://esite.io/store/Df99c2b95e686878ea8f16e465d56047e/site/index.html#" class="btn btn-lg btn-primary">Busque por profissionais</a>
-                        </footer>
-                     </div>
-                     <div class="col-md-6">
-                        <span class=""><img class="img-circle-style1" src="C:/Users/jean.pereira/Desktop/webDesignSenac-master/webDesignSenac-master/Prot+¦tipo%20alta%20fidelidade/img/ilust_anounceservices.jpg" alt=""></span>
-                        <footer>
-                           <a href="http://esite.io/store/Df99c2b95e686878ea8f16e465d56047e/site/index.html#" class="btn btn-lg btn-primary">Anuncie seus serviços</a>
-                        </footer>
+               <div class="form-group">
+                  <label class="control-label col-sm-2" for="cidade">Cidade:</label>
+                  <div class="col-sm-10">
+                     <select name="cidade" id="cidade" class="form-control">
+                        <option value=""></option>
+                     </select>
+                  </div>
+               </div>
+               <div class="form-group ">
+                  <label class="control-label col-sm-2" for="date">Data</label>
+                  <div class="col-sm-10">
+                     <div class="input-group">
+                        <div class="input-group-addon">
+                           <i class="fa fa-calendar"></i>
+                        </div>
+                        <input class="form-control" id="date" name="date" placeholder="DD/MM/AAAA" type="text"/>
                      </div>
                   </div>
-               </center>
-            </div>
-         </div>
-         <hr class="featurette-divider">
-         <!-- FOOTER -->
-         <footer>
-            <p class="pull-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
-         </footer>
+               </div>
+               <div class="form-group">
+                  <label class="control-label col-sm-2" for="comment">Informações Adicionais:</label>
+                  <div class="col-sm-10">
+                     <textarea class="form-control" rows="5" id="comment"></textarea>
+                  </div>
+               </div>
+               <div class="form-group">
+                  <div class="col-sm-10 col-sm-offset-2">
+                     <input type="submit" name="submit" value="Buscar" class="btn btn-lg btn-primary">
+                  </div>
+               </div>
+            </form>
+         </section>
       </div>
+      <script>
+         $('#sandbox-container input').datepicker({
+         });
+      </script>
       <!-- /.container -->
       <!-- Bootstrap core JavaScript
          ================================================== -->

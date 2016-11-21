@@ -48,8 +48,7 @@
                   </div>
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a href="login.html" class="box-feature2" ><strong>LOGIN</strong></a></li>
-                        <li><a href="#" class="box-feature2" ><strong>DIVULGUE SEUS SERVIÇOS</strong></a></li>
+                        <li><a href="login.html" class="box-feature2" ><strong>DIVULGUE SEUS SERVIÇOS</strong></a></li>
                         <li><a href="#" class="box-feature2" id="fontResizer" >Aa+</a></li>
                      </ul>
                   </div>
@@ -62,7 +61,7 @@
          <section class="">
             <h1><center><strong>Encontre os melhores <br /> <?php echo htmlspecialchars($_POST['profissoes']); ?> em sua região!</strong></center>
             </h1><br />
-            <form class="form-horizontal" method="post">
+            <form class="form-horizontal" method="post" action="chequeSeuEmail.html">
                <div class="form-group">
                   <label class="control-label col-sm-2" for="cep">CEP:</label>
                   <div class="col-sm-10">
@@ -86,7 +85,7 @@
                   </div>
                </div>
                <div class="form-group ">
-                  <label class="control-label col-sm-2" for="date">Data</label>
+                  <label class="control-label col-sm-2" for="date">Periodo de interesse</label>
                   <div class="col-sm-10">
                      <div class="input-group">
                         <div class="input-group-addon">

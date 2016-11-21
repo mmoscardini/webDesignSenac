@@ -30,7 +30,6 @@
       <link href="carousel.css" rel="stylesheet">
       <style type="text/css">.\31 2u{width:100%}.\31 1u{width:91.6666666667%}.\31 0u{width:83.3333333333%}.\39 u{width:75%}.\38 u{width:66.6666666667%}.\37 u{width:58.3333333333%}.\36 u{width:50%}.\35 u{width:41.6666666667%}.\34 u{width:33.3333333333%}.\33 u{width:25%}.\32 u{width:16.6666666667%}.\31 u{width:8.3333333333%}.\31 u,.\32 u,.\33 u,.\34 u,.\35 u,.\36 u,.\37 u,.\38 u,.\39 u,.\31 0u,.\31 1u,.\31 2u{float:left;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-o-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box}.\-11u{margin-left:91.6666666667%}.\-10u{margin-left:83.3333333333%}.\-9u{margin-left:75%}.\-8u{margin-left:66.6666666667%}.\-7u{margin-left:58.3333333333%}.\-6u{margin-left:50%}.\-5u{margin-left:41.6666666667%}.\-4u{margin-left:33.3333333333%}.\-3u{margin-left:25%}.\-2u{margin-left:16.6666666667%}.\-1u{margin-left:8.3333333333%}.row.flush{margin-left:0}.row.flush>*{padding:0!important}
       </style>
-
       <script type="text/javascript" src="JavaScript.js">      </script>
    </head>
    <!-- NAVBAR
@@ -51,7 +50,7 @@
                   </div>
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a href="#" class="box-feature2" tabindex="2"><strong>LOGIN</strong></a></li>
+                        <li><a href="login.html" class="box-feature2" tabindex="2"><strong>LOGIN</strong></a></li>
                         <li><a href="#" class="box-feature2" tabindex="3"><strong>DIVULGUE SEUS SERVIÇOS</strong></a></li>
                         <li><a href="#" class="box-feature2" id="fontResizer" tabindex="4">Aa+</a></li>
                      </ul>
@@ -66,23 +65,33 @@
          <div class="carousel-inner " role="listbox">
             <div class="item active">
                <img class="first-slide backgroundColor" src="../../assets/img/transparentbg.png" alt="">
-			  <div class="container">
-		 <div class="carousel-caption">
-            <h3>Encontre um serviço</h3>
-			<form action="form.php" method="post">
-				<select name="profissoes" id="comboBox" class="selectpicker" style="color: #323233; border-radius: 6px;" required tabindex="5">
-				   <option value="">Selecione</option>
-				   <option value="Médicos">Médicos</option>
-				   <option value="Agentes de Turismo">Agentes de Turismo</option>
-				   <option value="Personal Trainers">Personal Trainers</option>
-				   <option value="Professores">Professores</option>
-				</select><br>
-				<footer>
-					<input type="submit" name="submit" value="Buscar" class="btn btn-lg btn-info buttonMinWidth" tabindex="6">
-				</footer>
-			</form>
-         </div>
-		 </div>
+               <div class="container">
+                  <div class="carousel-caption">
+                     <h3>Encontre um serviço</h3>
+                     <form action="form.php" method="post">
+                        <select name="profissoes" id="comboBox" class="selectpicker" style="color: #323233; border-radius: 6px;" required tabindex="5">
+                           <option value="">Selecione</option>
+                           <optgroup label="Saúde e Bem-Estar">
+                              <option value="Médicos">Médicos</option>
+                              <option value="Personal Trainers">Personal Trainers</option>
+                              <option value="Nutricionistas">Nutricionistas</option>
+                           </optgroup>
+                           <optgroup label="Lazer e Turismo">
+                              <option value="Agentes de Turismo">Agentes de Viagem</option>
+                              <option value="Guias Turísticos">Guias Turísticos</option>
+                           </optgroup>
+                           <optgroup label="Educação e Cultura">
+                              <option value="Professores de Idiomas">Professores de Idiomas</option>
+                              <option value="Instrutores de Artesanato">Instrutores de Artesanato</option>
+                           </optgroup>
+                        </select>
+                        <br>
+                        <footer>
+                           <input type="submit" name="submit" value="Buscar" class="btn btn-lg btn-info buttonMinWidth" tabindex="6">
+                        </footer>
+                     </form>
+                  </div>
+               </div>
             </div>
          </div>
          <!-- /input-group -->
@@ -90,7 +99,6 @@
       <!-- /.col-lg-6 -->
       </div><!-- /.row -->
       <!-- /.carousel -->
-	  
       <!-- Marketing messaging and featurettes
          ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -157,26 +165,25 @@
                </center>
             </div>
          </div>
-
-         <hr> <hr>
-
+         <hr>
+         <hr>
          <footer>
-         	<div class="container">
-	         	<div class="col-lg-4 ">
-	         		<a href="#" class="byline" tabindex="17">Quem Somos</a>
-	 	        </div>
-	 	        <div class="col-lg-4 ">
-	 	       		<a href="#" class="byline" tabindex="18">Contato</a>
-	 	        </div>
-	 	        <div class="col-lg-4 ">
-	 	        	<a href="#" class="byline" tabindex="19">Nossos Serviços</a>
-	 	        </div>
- 	        </div>
- 	        <br> <br>
-			<div class="container">
-	            <p class="pull-right"><a href="#" tabindex="22">Back to top</a></p>
-	            <p>&copy; 2016 Company, Inc. &middot; <a href="#" tabindex="20">Privacy</a> &middot; <a href="#" tabindex="21">Terms</a></p>
-	        </div>
+            <div class="container">
+               <div class="col-lg-4 ">
+                  <a href="#" class="byline" tabindex="17">Quem Somos</a>
+               </div>
+               <div class="col-lg-4 ">
+                  <a href="#" class="byline" tabindex="18">Contato</a>
+               </div>
+               <div class="col-lg-4 ">
+                  <a href="#" class="byline" tabindex="19">Nossos Serviços</a>
+               </div>
+            </div>
+            <br> <br>
+            <div class="container">
+               <p class="pull-right"><a href="#" tabindex="22">Voltar ao Topo</a></p>
+               <p>&copy; 2016 Elder Peer. &middot; <a href="#" tabindex="20">Privacidade</a> &middot; <a href="#" tabindex="21">Termos e Condições</a></p>
+            </div>
          </footer>
       </div>
       <!-- /.container -->

@@ -2,7 +2,7 @@ $(document).ready(function(){
  	var normalFontSize = true;
  	$('#fontResizer').click(function(){
  		if (normalFontSize == true){
- 			$(document.body).css({'font-size':15, 'font-size':20});
+                  $(document.body).css({'font-size':15, 'font-size':20});
  			$('#fontResizer').html('Aa-');
  			normalFontSize = !normalFontSize;
  		}

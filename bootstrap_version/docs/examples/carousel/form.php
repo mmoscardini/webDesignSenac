@@ -48,7 +48,7 @@
                   </div>
                   <div id="navbar" class="navbar-collapse collapse">
                      <ul class="nav navbar-nav">
-                        <li><a href="#" class="box-feature2" ><strong>LOGIN</strong></a></li>
+                        <li><a href="login.html" class="box-feature2" ><strong>LOGIN</strong></a></li>
                         <li><a href="#" class="box-feature2" ><strong>DIVULGUE SEUS SERVIÇOS</strong></a></li>
                         <li><a href="#" class="box-feature2" id="fontResizer" >Aa+</a></li>
                      </ul>

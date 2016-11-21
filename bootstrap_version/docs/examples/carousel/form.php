@@ -66,7 +66,7 @@
                <div class="form-group">
                   <label class="control-label col-sm-2" for="cep">CEP:</label>
                   <div class="col-sm-10">
-                     <input type="email" class="form-control" id="email" placeholder="Digite seu CEP">
+                     <input type="number" class="form-control" id="cep" placeholder="Digite seu CEP">
                   </div>
                </div>
                <div class="form-group">
@@ -92,7 +92,7 @@
                         <div class="input-group-addon">
                            <i class="fa fa-calendar"></i>
                         </div>
-                        <input class="form-control" id="date" name="date" placeholder="DD/MM/AAAA" type="text"/>
+                        <input type="date" class="form-control" id="date" name="date" placeholder="DD/MM/AAAA" type="text"/>
                      </div>
                   </div>
                </div>
@@ -104,7 +104,7 @@
                </div>
                <div class="form-group">
                   <div class="col-sm-10 col-sm-offset-2">
-                     <input type="submit" name="submit" value="Buscar" class="btn btn-lg btn-primary buttonMinWidth">
+                     <center><input type="submit" name="submit" value="Buscar" class="btn btn-lg btn-primary buttonMinWidth"></center>
                   </div>
                </div>
             </form>
@@ -125,8 +125,8 @@
          </div>
          <br> <br>
          <div class="container">
-               <p class="pull-right"><a href="#">Back to top</a></p>
-               <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+               <p class="pull-right"><a href="#">Voltar ao Topo</a></p>
+               <p>&copy; 2016 Elder Peer &middot; <a href="#">Privacidade</a> &middot; <a href="#">Termos e Condições</a></p>
            </div>
          </footer>
 

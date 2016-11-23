@@ -81,16 +81,18 @@ h2{
 /* Declare heights because of positioning of img element */
 
 .carousel .item {
-	height: 500px;
+	height: 38em;
 	background-color: #777;
+
 }
 
 .carousel-inner> .item> img {
-	position: absolute;
+	position: relative;
 	top: 0;
 	left: 0;
-	min-width: 100%;
-	height: 500px;
+	max-width: auto;
+	max-height: 38em;
+	margin: 6em auto 0;
 }
 
 .row {
@@ -256,6 +258,10 @@ header.major .byline {
 	.buttonMinWidth{
 		min-width: 10em;
 	}
+	.carousel .item {
+    height: 30em;
+    background-color: #777;
+}
 }
 
 @media (min-width: 768px) {
@@ -280,6 +286,10 @@ header.major .byline {
 		margin-bottom: 20px;
 		font-size: 0.4em;
 		line-height: 1.4;
+	}
+	.carousel-caption h3 {
+		color: #fff;
+		text-shadow: -1px 1px black;
 	}
 	.featurette-heading {
 		font-size: 0.6em;
@@ -337,11 +347,12 @@ span.maxWidth{
 
 
 .backgroundColor{
-    background: #856FCC; /* For browsers that do not support gradients */
-    background: -webkit-linear-gradient(#856FCC,#856FCC, #8D76D5); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(#856FCC,#856FCC, #8D76D5); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(#856FCC,#856FCC, #8D76D5); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(#856FCC,#856FCC, #8D76D5); /* Standard syntax */
+
+	background: #e9eef7; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#e9eef7, #fff); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#e9eef7, #fff); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#e9eef7, #fff); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#e9eef7, #fff); /* Standard syntax */	
 }
 
 .formContainer{
